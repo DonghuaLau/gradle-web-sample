@@ -1,0 +1,25 @@
+apply plugin: 'war'
+apply from: 'gretty.plugin'
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+		classpath 'javax.servlet:servlet-api:2.5'
+		classpath 'javax.servlet:jstl:1.2'
+    }
+}
+
+dependencies {
+	compile 'javax.servlet:javax.servlet-api:4.0.0'
+}
+
+gretty {
+   httpPort = 5080
+   contextPath = 'todo'
+}
