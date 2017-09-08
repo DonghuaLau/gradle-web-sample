@@ -1,11 +1,11 @@
-package com;
+package controllers;
 
 import java.io.IOException;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class ToDoServlet extends HttpServlet {
+public class MainController extends HttpServlet {
     //private ToDoRepository toDoRepository = new InMemoryToDoRepository();
 
     @Override
@@ -29,7 +29,7 @@ public class ToDoServlet extends HttpServlet {
             return "/jsp/delete.jsp";
         }
 		else if(servletPath.equals("/index")) {
-            //(...)
+			request.setAttribute("name", "Donghua.Lau");
             return "/jsp/index.jsp";
         }
 		else if(servletPath.equals("/hello")) {
